@@ -16,6 +16,11 @@
 
 #pragma once
 
+#define UNICODE_SELECTED_MODES UNICODE_MODE_MACOS
+#define UNICODE_KEY_MAC KC_LALT
+#define UNICODE_TYPE_DELAY 10
+#define UNICODE_CYCLE_PERSIST true
+
 #ifdef RGB_MATRIX_ENABLE
 /* RGB Matrix driver configuration */
 #    define DRIVER_COUNT 2

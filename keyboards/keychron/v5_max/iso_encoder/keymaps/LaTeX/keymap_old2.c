@@ -27,10 +27,7 @@ enum layers {
     LATEX_SHIFT,
     LATEX_LCRTL,
     LATEX_RCRTL,
-    UC_BASE,
-    UC_SHIFT,
-    UC_LCRTL,
-    UC_RCRTL
+    LATEX_DS
 };
 
 enum custom_keycodes {
@@ -153,9 +150,11 @@ enum custom_keycodes {
     TX_Natural,
 };
 
+
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [MAC_BASE] = LAYOUT_iso_99(
+ [MAC_BASE] = LAYOUT_iso_99(
         KC_ESC,             KC_BRID,  KC_BRIU,  KC_MCTRL, KC_LNPAD, RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,    KC_VOLD,  KC_VOLU,            KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
         KC_NUBS,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            KC_NUM,   KC_PSLS,  KC_PAST,    KC_PMNS,
         KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,    KC_RBRC,                      KC_P7,    KC_P8,    KC_P9,      KC_PPLS,
@@ -168,9 +167,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  BT_HST1,  BT_HST2,  BT_HST3,  P2P4G,    _______,  _______,  _______,  _______,  _______,  _______,  _______,    _______,  _______,            _______,  _______,  _______,    _______,
         RGB_TOG,  RGB_MOD,  RGB_VAI,  RGB_HUI,  RGB_SAI,  RGB_SPI,  _______,  _______,  _______,  _______,  _______,  _______,    _______,                      _______,  _______,  _______,    _______,
         _______,  RGB_RMOD, RGB_VAD,  RGB_HUD,  RGB_SAD,  RGB_SPD,  _______,  _______,  _______,  _______,  _______,  _______,    _______,  _______,            _______,  _______,  _______,
-        TG(UC_BASE),  _______,  _______,  _______,  _______,  _______,  BAT_LVL,  NK_TOGG,  _______,  _______,  _______,  _______,    TG(LATEX_BASE),  _______,     _______,  _______,  _______,    _______,
+        _______,  _______,  _______,  _______,  _______,  _______,  BAT_LVL,  NK_TOGG,  _______,  _______,  _______,  _______,    TG(LATEX_BASE),  _______,     _______,  _______,  _______,    _______,
         _______,  _______,  _______,                                _______,                                _______,  _______,    _______,  _______,  _______,  _______,  _______,  _______            ),
-
+  
     [WIN_BASE] = LAYOUT_iso_99(
         KC_ESC,             KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
         KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            KC_NUM,   KC_PSLS,  KC_PAST,    KC_PMNS,
@@ -219,39 +218,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  KC_NUBS,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,  KC_UP,    KC_P1,    KC_P2,    KC_P3,      KC_PENT,
         _______,  _______,  _______,                                KC_SPC,                                 _______,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_P0,    KC_PDOT            ),
 
-    [UC_BASE] = LAYOUT_iso_99(
-        TG(UC_BASE),        KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,    KC_MUTE,
-        _______,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            UC(0x2044), UC(0x221A), UC(0x00D7), UC(0x2112),
-        _______,   UC(0x03C8), UC(0x03C9), UC(0x03B5), UC(0x03C1), UC(0x03C4), UC(0x03C5), KC_U,    KC_I,     KC_O,     UC(0x03C0), KC_LBRC,    KC_RBRC,                     UC(0x2202), UC(0x222B), UC(0x22C5), UC(0x2020),
-        _______,  UC(0x03B1), UC(0x03C3), UC(0x03B4), UC(0x03C6), UC(0x03B3), KC_H,      UC(0x03B8), UC(0x03BA), UC(0x03BB), KC_SCLN, KC_QUOT,    KC_NUHS,  KC_ENT,            UC(0x2211),   _______,  UC(0x21D2),
-        _______, KC_NUBS, UC(0x03B6), UC(0x03BE), UC(0x03C7), UC(0x03BD), UC(0x03B2), UC(0x03B7), UC(0x03BC), KC_COMM,  KC_DOT,   KC_SLSH,      _______,  _______,  _______,  UC(0x230A), UC(0x22A5), UC(0x2111),
-        _______, KC_LWIN, KC_LALT,                                KC_SPC,                     KC_RALT,  MO(UC_RCRTL), KC_RCTL,  _______,  _______,  _______,  KC_P0,    KC_PDOT            ),
-
-    [UC_SHIFT] = LAYOUT_iso_99(
-        TG(UC_BASE),        KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
+    [LATEX_DS] = LAYOUT_iso_99(
+        TG(LATEX_BASE),     KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
         KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            KC_NUM,   KC_PSLS,  KC_PAST,    KC_PMNS,
-        _______,  UC(0x03A8), UC(0x03A9), UC(0x0395), UC(0x03A1), UC(0x03A4), UC(0x03A5), KC_U,    KC_I,     KC_O,     UC(0x03A0), KC_LBRC,    KC_RBRC,                      KC_P7,    KC_P8,    KC_P9,      KC_PPLS,
-        _______,  UC(0x0391), UC(0x03A3), UC(0x0394), UC(0x03A6), UC(0x0393), KC_H,      UC(0x0398), UC(0x039A), UC(0x039B), KC_SCLN, KC_QUOT,    KC_NUHS,  KC_ENT,             KC_P4,    KC_P5,    KC_P6,
-        _______,  KC_NUBS,  UC(0x0396), UC(0x039E), UC(0x03A7), UC(0x039D), _______,    UC(0x0397), UC(0x039C), KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,  KC_UP,    KC_P1,    UC(0x2308), KC_P3,      UC(0x211C),
-        _______,  _______,  _______,                                KC_SPC,                                 _______,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_P0,    KC_PDOT            ),
+        KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,    KC_RBRC,                      KC_P7,    KC_P8,    KC_P9,      KC_PPLS,
+        KC_CAPS,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,    KC_NUHS,  KC_ENT,             KC_P4,    KC_P5,    KC_P6,
+        KC_LSFT,  KC_NUBS,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,  KC_UP,    KC_P1,    KC_P2,    KC_P3,      KC_PENT,
+        KC_LCTL,  KC_LWIN,  KC_LALT,                                KC_SPC,                                 KC_RALT,  _______, KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_P0,    KC_PDOT            ),
 
-    [UC_LCRTL] = LAYOUT_iso_99(
-        TG(UC_BASE),        KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
-        KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            KC_NUM,   KC_PSLS,  KC_PAST,    KC_PMNS,
-        _______,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,    KC_RBRC,                      KC_P7,    KC_P8,    UC(0x266F), KC_PPLS,
-        _______,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,    KC_NUHS,  KC_ENT,             KC_P4,    KC_P5,    KC_P6,
-        _______,  KC_NUBS,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,  KC_UP,    KC_P1,    KC_P2,    KC_P3,      KC_PENT,
-        _______,  _______,  KC_LALT,                                KC_SPC,                                 KC_RALT,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_P0,    KC_PDOT            ),
 
-    [UC_RCRTL] = LAYOUT_iso_99(
-        TG(UC_BASE),        KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
-        KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            KC_NUM,   KC_PSLS,  KC_PAST,    KC_PMNS,
-        _______,  KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,    KC_RBRC,                      KC_P7,    KC_P8,    UC(0x266D),  KC_PPLS,
-        _______,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,    KC_NUHS,  KC_ENT,             KC_P4,    KC_P5,    KC_P6,
-        _______,  KC_NUBS,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,  KC_UP,    KC_P1,    KC_P2,    KC_P3,      KC_PENT,
-        _______,  _______,  _______,                                KC_SPC,                                 _______,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_P0,    KC_PDOT            )
-
-    
 };
 
 #if defined(ENCODER_MAP_ENABLE)
@@ -264,10 +239,7 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [LATEX_SHIFT] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
     [LATEX_LCRTL] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
     [LATEX_RCRTL] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
-    [UC_BASE] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
-    [UC_SHIFT] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
-    [UC_LCRTL] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
-    [UC_RCRTL] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU)}
+    [LATEX_DS] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
 };
 #endif // ENCODER_MAP_ENABLE
 
@@ -784,18 +756,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     switch (get_highest_layer(state)) {
-        case UC_BASE:
-            rgblight_sethsv_noeeprom(170, 255, 255); // Set backlight to blue
-            break;
-        case UC_SHIFT:
-            rgblight_sethsv_noeeprom(170, 255, 255); // Set backlight to blue
-            break;
-        case UC_LCRTL:
-            rgblight_sethsv_noeeprom(170, 255, 255); // Set backlight to blue
-            break;
-        case UC_RCRTL:
-            rgblight_sethsv_noeeprom(170, 255, 255); // Set backlight to blue
-            break;
         case LATEX_BASE:
             rgblight_sethsv_noeeprom(0, 0, 255); // Set backlight to white
             break;

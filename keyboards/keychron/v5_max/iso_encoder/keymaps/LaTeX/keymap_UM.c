@@ -153,6 +153,232 @@ enum custom_keycodes {
     TX_Natural,
 };
 
+enum unicode_names {
+    UC_alpha,
+    UC_beta,
+    UC_gamma,
+    UC_delta,
+    UC_epsilon,
+    UC_zeta,
+    UC_eta,
+    UC_theta,
+    UC_iota,
+    UC_kappa,
+    UC_lambda,
+    UC_mu,
+    UC_nu,
+    UC_xi,
+    UC_omicron,
+    UC_pi,
+    UC_rho,
+    UC_sigma,
+    UC_tau,
+    UC_upsilon,
+    UC_phi,
+    UC_chi,
+    UC_psi,
+    UC_omega,
+
+    UC_ALPHA,
+    UC_BETA,
+    UC_GAMMA,
+    UC_DELTA,
+    UC_EPSILON,
+    UC_ZETA,
+    UC_ETA,
+    UC_THETA,
+    UC_IOTA,
+    UC_KAPPA,
+    UC_LAMBDA,
+    UC_MU,
+    UC_NU,
+    UC_XI,
+    UC_OMICRON,
+    UC_PI,
+    UC_RHO,
+    UC_SIGMA,
+    UC_TAU,
+    UC_UPSILON,
+    UC_PHI,
+    UC_CHI,
+    UC_PSI,
+    UC_OMEGA,
+
+    UC_FRAC,
+    UC_SQRT,
+    UC_x10,
+    UC_LIM,
+    UC_SIM,
+    UC_APRROX,
+    UC_NEQ,
+    UC_TIMES,
+    UC_DIV,
+    UC_PM,
+    UC_MP,
+    UC_NABLA,
+    UC_PDIFF,
+    UC_INT,
+    UC_2INT,
+    UC_3INT,
+    UC_INT_CIRC,
+    UC_INT_CIRC2,
+    UC_INT_CIRC3,
+    UC_CONV,
+    UC_DOT,
+    UC_SUM,
+    UC_PROD,
+    UC_IMPLIES,
+    UC_MAP,
+    UC_FLOOR,
+    UC_CEIL,
+    UC_REAL,
+    UC_IMAG,
+    UC_DAGGER,
+    UC_INF,
+    UC_ALEPH,
+    UC_ANGLE,
+    UC_PARALLEL,
+    UC_PERP,
+    UC_BRA,
+    UC_KET,
+    UC_THEREFORE,
+    UC_ELIPS,
+    UC_G8TEQ,
+    UC_LSTEQ,
+    UC_MCHGR,
+    UC_MCHLS,
+    UC_No,
+    UC_QNoL,
+    UC_CIRCPLUS,
+    UC_CIRCPROD,
+    UC_CIRCDOT,
+
+    UC_Circ,
+    UC_Overbar,
+    UC_Underbar,
+    UC_Vec,
+
+    UC_SS,
+    UC_ae,
+    UC_oDK,
+    UC_hbar,
+
+    UC_Sharp,
+    UC_Flat,
+    UC_Natural,
+};
+
+const uint32_t PROGMEM unicode_map[] = {
+    [UC_alpha] = 0x03B1, // α
+    [UC_beta] = 0x03B2, // β
+    [UC_gamma] = 0x03B3, // γ
+    [UC_delta] = 0x03B4, // δ
+    [UC_epsilon] = 0x03B5, // ε
+    [UC_zeta] = 0x03B6, // ζ
+    [UC_eta] = 0x03B7, // η
+    [UC_theta] = 0x03B8, // θ
+    [UC_iota] = 0x03B9, // ι
+    [UC_kappa] = 0x03BA, // κ
+    [UC_lambda] = 0x03BB, // λ
+    [UC_mu] = 0x03BC, // μ
+    [UC_nu] = 0x03BD, // ν
+    [UC_xi] = 0x03BE, // ξ
+    [UC_omicron] = 0x03BF, // ο
+    [UC_pi] = 0x03C0, // π
+    [UC_rho] = 0x03C1, // ρ
+    [UC_sigma] = 0x03C3, // σ
+    [UC_tau] = 0x03C4, // τ
+    [UC_upsilon] = 0x03C5, // υ
+    [UC_phi] = 0x03C6, // φ
+    [UC_chi] = 0x03C7, // χ
+    [UC_psi] = 0x03C8, // ψ
+    [UC_omega] = 0x03C9, // ω
+    [UC_ALPHA] = 0x0391, // Α
+    [UC_BETA] = 0x0392, // Β
+    [UC_GAMMA] = 0x0393, // Γ
+    [UC_DELTA] = 0x0394, // Δ
+    [UC_EPSILON] = 0x0395, // Ε
+    [UC_ZETA] = 0x0396, // Ζ
+    [UC_ETA] = 0x0397, // Η
+    [UC_THETA] = 0x0398, // Θ
+    [UC_IOTA] = 0x0399, // Ι
+    [UC_KAPPA] = 0x039A, // Κ
+    [UC_LAMBDA] = 0x039B, // Λ
+    [UC_MU] = 0x039C, // Μ
+    [UC_NU] = 0x039D, // Ν
+    [UC_XI] = 0x039E, // Ξ
+    [UC_OMICRON] = 0x039F, // Ο
+    [UC_PI] = 0x03A0, // Π
+    [UC_RHO] = 0x03A1, // Ρ
+    [UC_SIGMA] = 0x03A3, // Σ
+    [UC_TAU] = 0x03A4, // Τ
+    [UC_UPSILON] = 0x03A5, // Υ
+    [UC_PHI] = 0x03A6, // Φ
+    [UC_CHI] = 0x03A7, // Χ
+    [UC_PSI] = 0x03A8, // Ψ
+    [UC_OMEGA] = 0x03A9, // Ω
+    [UC_FRAC] = 0x2044, // ⁄
+    [UC_SQRT] = 0x221A, // √
+    [UC_x10] = 0x00D7, // ×
+    [UC_LIM] = 0x2211, // ∑
+    [UC_SIM] = 0x223C, // ∼
+    [UC_APRROX] = 0x2248, // ≈
+    [UC_NEQ] = 0x2260, // ≠
+    [UC_TIMES] = 0x00D7, // ×
+    [UC_DIV] = 0x00F7, // ÷
+    [UC_PM] = 0x00B1, // ±
+    [UC_MP] = 0x2213, // ∓
+    [UC_NABLA] = 0x2207, // ∇
+    [UC_PDIFF] = 0x2202, // ∂
+    [UC_INT] = 0x222B, // ∫
+    [UC_2INT] = 0x222C, // ∬
+    [UC_3INT] = 0x222D, // ∭
+    [UC_INT_CIRC] = 0x222E, // ∮
+    [UC_INT_CIRC2] = 0x2230, // ∰
+    [UC_INT_CIRC3] = 0x2231, // ∱
+    [UC_CONV] = 0x2219, // ∙
+    [UC_DOT] = 0x22C5, // ⋅
+    [UC_SUM] = 0x2211, // ∑
+    [UC_PROD] = 0x220F, // ∏
+    [UC_IMPLIES] = 0x21D2, // ⇒
+    [UC_MAP] = 0x21A6, // ↦
+    [UC_FLOOR] = 0x230A, // ⌊
+    [UC_CEIL] = 0x2308, // ⌈
+    [UC_REAL] = 0x211C, // ℜ
+    [UC_IMAG] = 0x2111, // ℑ
+    [UC_DAGGER] = 0x2020, // †
+    [UC_INF] = 0x221E, // ∞
+    [UC_ALEPH] = 0x2135, // ℵ
+    [UC_ANGLE] = 0x2220, // ∠
+    [UC_PARALLEL] = 0x2225, // ∥
+    [UC_PERP] = 0x27C2, // ⟂
+    [UC_BRA] = 0x27E8, // ⟨
+    [UC_KET] = 0x27E9, // ⟩
+    [UC_THEREFORE] = 0x2234, // ∴
+    [UC_ELIPS] = 0x2026, // …
+    [UC_G8TEQ] = 0x2265, // ≥
+    [UC_LSTEQ] = 0x2264, // ≤
+    [UC_MCHGR] = 0x226B, // ≫
+    [UC_MCHLS] = 0x226A, // ≪
+    [UC_No] = 0x00AC, // ¬
+    [UC_QNoL] = 0x2200, // ∀
+    [UC_CIRCPLUS] = 0x2295, // ⊕
+    [UC_CIRCPROD] = 0x2297, // ⊗
+    [UC_CIRCDOT] = 0x2299, // ⊙
+    [UC_Circ] = 0x25CB, // ○
+    [UC_Overbar] = 0x0305, // ̅
+    [UC_Underbar] = 0x0332, // ̲
+    [UC_Vec] = 0x20D7, // ⃗
+    [UC_SS] = 0x00DF, // ß
+    [UC_ae] = 0x00E6, // æ
+    [UC_oDK] = 0x00F8, // ø
+    [UC_hbar] = 0x0127, // ħ
+    [UC_Sharp] = 0x266F, // ♯
+    [UC_Flat] = 0x266D, // ♭
+    [UC_Natural] = 0x266E, // ♮
+};
+
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [MAC_BASE] = LAYOUT_iso_99(
@@ -221,24 +447,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [UC_BASE] = LAYOUT_iso_99(
         TG(UC_BASE),        KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,    KC_MUTE,
-        _______,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            UC(0x2044), UC(0x221A), UC(0x00D7), UC(0x2112),
-        _______,   UC(0x03C8), UC(0x03C9), UC(0x03B5), UC(0x03C1), UC(0x03C4), UC(0x03C5), KC_U,    KC_I,     KC_O,     UC(0x03C0), KC_LBRC,    KC_RBRC,                     UC(0x2202), UC(0x222B), UC(0x22C5), UC(0x2020),
-        _______,  UC(0x03B1), UC(0x03C3), UC(0x03B4), UC(0x03C6), UC(0x03B3), KC_H,      UC(0x03B8), UC(0x03BA), UC(0x03BB), KC_SCLN, KC_QUOT,    KC_NUHS,  KC_ENT,            UC(0x2211),   _______,  UC(0x21D2),
-        _______, KC_NUBS, UC(0x03B6), UC(0x03BE), UC(0x03C7), UC(0x03BD), UC(0x03B2), UC(0x03B7), UC(0x03BC), KC_COMM,  KC_DOT,   KC_SLSH,      _______,  _______,  _______,  UC(0x230A), UC(0x22A5), UC(0x2111),
+        _______,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            UM(UC_FRAC), UM(UC_SQRT), UM(UC_x10), UM(UC_LIM),
+        _______,   UM(UC_psi), UM(UC_omega), UM(UC_epsilon), UM(UC_rho), UM(UC_tau), UM(UC_upsilon), KC_U,    KC_I,     KC_O,     UM(UC_pi), KC_LBRC,    KC_RBRC,                     UM(UC_PDIFF), UM(UC_INT), UM(UC_DOT), UM(UC_DAGGER),
+        _______,  UC(0x03B1), UM(UC_sigma), UM(UC_delta), UM(UC_phi), UM(UC_gamma), KC_H,      UM(UC_theta), UM(UC_kappa), UM(UC_lambda), KC_SCLN, KC_QUOT,    KC_NUHS,  KC_ENT,            UM(UC_SUM),   _______,  UM(UC_IMPLIES),
+        _______, KC_NUBS, UM(UC_zeta), UM(UC_xi), UM(UC_chi), UM(UC_nu), UM(UC_beta), UM(UC_eta), UM(UC_mu), KC_COMM,  KC_DOT,   KC_SLSH,      _______,  _______,  _______,  UM(UC_FLOOR), UM(UC_PERP), UM(UC_IMAG),
         _______, KC_LWIN, KC_LALT,                                KC_SPC,                     KC_RALT,  MO(UC_RCRTL), KC_RCTL,  _______,  _______,  _______,  KC_P0,    KC_PDOT            ),
 
     [UC_SHIFT] = LAYOUT_iso_99(
         TG(UC_BASE),        KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
         KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            KC_NUM,   KC_PSLS,  KC_PAST,    KC_PMNS,
-        _______,  UC(0x03A8), UC(0x03A9), UC(0x0395), UC(0x03A1), UC(0x03A4), UC(0x03A5), KC_U,    KC_I,     KC_O,     UC(0x03A0), KC_LBRC,    KC_RBRC,                      KC_P7,    KC_P8,    KC_P9,      KC_PPLS,
-        _______,  UC(0x0391), UC(0x03A3), UC(0x0394), UC(0x03A6), UC(0x0393), KC_H,      UC(0x0398), UC(0x039A), UC(0x039B), KC_SCLN, KC_QUOT,    KC_NUHS,  KC_ENT,             KC_P4,    KC_P5,    KC_P6,
-        _______,  KC_NUBS,  UC(0x0396), UC(0x039E), UC(0x03A7), UC(0x039D), _______,    UC(0x0397), UC(0x039C), KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,  KC_UP,    KC_P1,    UC(0x2308), KC_P3,      UC(0x211C),
+        _______,  UM(UC_PSI), UM(UC_OMEGA), UM(UC_EPSILON), UM(UC_RHO), UM(UC_TAU), UM(UC_UPSILON), KC_U,    KC_I,     KC_O,     UM(UC_PI), KC_LBRC,    KC_RBRC,                      KC_P7,    KC_P8,    KC_P9,      KC_PPLS,
+        _______,  UM(UC_ALPHA), UM(UC_SIGMA), UM(UC_DELTA), UM(UC_PHI), UM(UC_GAMMA), KC_H,      UM(UC_THETA), UM(UC_KAPPA), UM(UC_LAMBDA), KC_SCLN, KC_QUOT,    KC_NUHS,  KC_ENT,             KC_P4,    KC_P5,    KC_P6,
+        _______,  KC_NUBS,  UM(UC_ZETA), UM(UC_XI), UM(UC_CHI), UM(UC_NU), _______,    UM(UC_ETA), UM(UC_MU), KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,  KC_UP,    KC_P1,    UM(UC_CEIL), KC_P3,      UM(UC_REAL),
         _______,  _______,  _______,                                KC_SPC,                                 _______,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_P0,    KC_PDOT            ),
 
     [UC_LCRTL] = LAYOUT_iso_99(
         TG(UC_BASE),        KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
         KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            KC_NUM,   KC_PSLS,  KC_PAST,    KC_PMNS,
-        _______,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,    KC_RBRC,                      KC_P7,    KC_P8,    UC(0x266F), KC_PPLS,
+        _______,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,    KC_RBRC,                      KC_P7,    KC_P8,    UM(UC_Sharp), KC_PPLS,
         _______,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,    KC_NUHS,  KC_ENT,             KC_P4,    KC_P5,    KC_P6,
         _______,  KC_NUBS,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,  KC_UP,    KC_P1,    KC_P2,    KC_P3,      KC_PENT,
         _______,  _______,  KC_LALT,                                KC_SPC,                                 KC_RALT,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_P0,    KC_PDOT            ),
@@ -246,7 +472,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [UC_RCRTL] = LAYOUT_iso_99(
         TG(UC_BASE),        KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
         KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            KC_NUM,   KC_PSLS,  KC_PAST,    KC_PMNS,
-        _______,  KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,    KC_RBRC,                      KC_P7,    KC_P8,    UC(0x266D),  KC_PPLS,
+        _______,  KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,    KC_RBRC,                      KC_P7,    KC_P8,    UM(UC_Flat),  KC_PPLS,
         _______,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,    KC_NUHS,  KC_ENT,             KC_P4,    KC_P5,    KC_P6,
         _______,  KC_NUBS,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,  KC_UP,    KC_P1,    KC_P2,    KC_P3,      KC_PENT,
         _______,  _______,  _______,                                KC_SPC,                                 _______,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_P0,    KC_PDOT            )
