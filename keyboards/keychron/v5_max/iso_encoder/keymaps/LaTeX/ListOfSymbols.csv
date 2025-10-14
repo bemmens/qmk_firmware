@@ -1,114 +1,149 @@
-TX_alpha,       α,          \alpha,
-TX_beta,        β,          \beta,
-TX_gamma,       γ,          \gamma,
-TX_delta,       δ,          \delta,
-TX_epsilon,     ε,          \epsilon,
-TX_zeta,        ζ,          \zeta,
-TX_eta,         η,          \eta,
-TX_theta,       θ,          \theta,
-TX_iota,        ι,          \iota,
-TX_kappa,       κ,          \kappa,
-TX_lambda,      λ,          \lambda,
-TX_mu,          μ,          \mu,
-TX_nu,          ν,          \nu,
-TX_xi,          ξ,          \xi,
-TX_omicron,     ο,          \omicron,
-TX_pi,          π,          \pi,
-TX_rho,         ρ,          \rho,
-TX_sigma,       σ,          \sigma,
-TX_tau,         τ,          \tau,
-TX_upsilon,     υ,          \upsilon,
-TX_phi,         φ,          \phi,
-TX_chi,         χ,          \chi,
-TX_psi,         ψ,          \psi,
-TX_omega,       ω,          \omega,
-TX_ALPHA,       Α,          \Alpha,
-TX_BETA,        Β,          \Beta,
-TX_GAMMA,       Γ,          \Gamma,
-TX_DELTA,       Δ,          \Delta,
-TX_EPSILON,     Ε,          \Epsilon,
-TX_ZETA,        Ζ,          \Zeta,
-TX_ETA,         Η,          \Eta,
-TX_THETA,       Θ,          \Theta,
-TX_IOTA,        Ι,          \Iota,
-TX_KAPPA,       Κ,          \Kappa,
-TX_LAMBDA,      Λ,          \Lambda,
-TX_MU,          Μ,          \Mu,
-TX_NU,          Ν,          \Nu,
-TX_XI,          Ξ,          \Xi,
-TX_OMICRON,     Ο,          \Omicron,
-TX_PI,          Π,          \Pi,
-TX_RHO,         Ρ,          \Rho,
-TX_SIGMA,       Σ,          \Sigma,
-TX_TAU,         Τ,          \Tau,
-TX_UPSILON,     Υ,          \Upsilon,
-TX_PHI,         Φ,          \Phi,
-TX_CHI,         Χ,          \Chi,
-TX_PSI,         Ψ,          \Psi,
-TX_OMEGA,       Ω,          \Omega,
-TX_FRAC,        ½,          \frac{}/{},
-TX_SQRT,        √,          \sqrt,
-TX_x10,         ×10,        \times10^{},
-TX_LIM,         lim,        \lim,
-TX_SIM,         ~,          \sim,
-TX_APRROX,      ≈,          \approx,
-TX_NEQ,         ≠,          \neq,
-TX_TIMES,       ×,          \times,
-TX_DIV,         ÷,          \div,
-TX_PM,          ±,          \pm,
-TX_MP,          ∓,          \mp,
-TX_NABLA,       ∇,          \nabla,
-TX_PDIFF,       ∂,          \partial,
-TX_INT,         ∫,          \int,
-TX_2INT,        ∬,          \iint,
-TX_3INT,        ∭,          \iiint,
-TX_INT_CIRC,    ∮,          \oint,
-TX_INT_CIRC2,   ∯,          \oiint,
-TX_INT_CIRC3,   ∰,          \oiiint,
-TX_CONV,        *,          \ast,
-TX_DOT,         ⋅,          \cdot,
-TX_SUM,         ∑,          \sum,
-TX_PROD,        ∏,          \prod,
-TX_IMPLIES,     ⇒,          \implies,
-TX_MAP,         ↦,          \mapsto,
-TX_FLOOR,       ⌊x⌋,         \lfloor \rfloor,
-TX_CEIL,        ⌈x⌉,         \lceil \rceil,
-TX_REAL,        ℜ,          \Re,
-TX_IMAG,        ℑ,          \Im,
-TX_DAGGER,      †,          \dagger,
-TX_INF,         ∞,          \infty,
-TX_ALEPH,       ℵ,          \aleph,
-TX_ANGLE,       ∠,          \angle,
-TX_PARALLEL,    ∥,          \parallel,
-TX_PERP,        ⊥,          \perp,
-TX_BRA,         ⟨,          \langle,
-TX_KET,         ⟩,          \rangle,
-TX_THEREFORE,   ∴,          \therefore,
-TX_ELIPS,       …,          \ldots,
-TX_G8TEQ,       ≥,          \geq,
-TX_LSTEQ,       ≤,          \leq,
-TX_MCHGR,       ≫,          \gg,
-TX_MCHLS,       ≪,          \ll,
-TX_No,          №,          \textnumero,
-TX_QNoL,        ℓ,          \ell,
-TX_CIRCPLUS,    ⊕,          \oplus,
-TX_CIRCPROD,    ⊗,          \otimes,
-TX_CIRCDOT,     ⊙,          \odot,
-TX_Sharp,       ♯,          \sharp,
-TX_Flat,        ♭,          \flat,
-TX_Natural,     ♮,          \natural,
-TX_Circ,        ∘,          \circ,
-TX_Overbar,     ̄,          \overline,
-TX_Underbar,    _,        \underline,
-TX_Vec,         ⃗,          \vec,
-TX_SS,          ß,          \ss,
-TX_ae,          æ,          \ae,
-TX_oDK,         ø,          \o,
-TX_hbar,        ħ,          \hbar,
-TX_lap,          ,          \mathcal{L},
-TX_fourier,      ,          \mathcal{F},
-TX_binnomial,     (n/k) ,        \binom{n}{k},
+α,U+03B1,TX_alpha,\alpha
+β,U+03B2,TX_beta,\beta
+γ,U+03B3,TX_gamma,\gamma
+δ,U+03B4,TX_delta,\delta
+ε,U+03B5,TX_epsilon,\epsilon
+ζ,U+03B6,TX_zeta,\zeta
+η,U+03B7,TX_eta,\eta
+θ,U+03B8,TX_theta,\theta
+ϑ,U+03D1,TX_theta_alt,\vartheta
+ι,U+03B9,TX_iota,\iota
+κ,U+03BA,TX_kappa,\kappa
+λ,U+03BB,TX_lambda,\lambda
+μ,U+03BC,TX_mu,\mu
+ν,U+03BD,TX_nu,\nu
+ξ,U+03BE,TX_xi,\xi
+ο,U+03BF,TX_omicron,\omicron
+π,U+03C0,TX_pi,\pi
+ρ,U+03C1,TX_rho,\rho
+σ,U+03C3,TX_sigma,\sigma
+ς,U+03C2,TX_sigma_alt,\varsigma
+τ,U+03C4,TX_tau,\tau
+υ,U+03C5,TX_upsilon,\upsilon
+φ,U+03C6,TX_phi,\phi
+χ,U+03C7,TX_chi,\chi
+ψ,U+03C8,TX_psi,\psi
+ω,U+03C9,TX_omega,\omega
 
-TX_caligraph,     ,          \mathcal{},
-TX_mathbb,       ,          \mathbb{},
-TX_mathfrak,     ,          \mathfrak{},
+Α,U+0391,TX_ALPHA,\Alpha
+Β,U+0392,TX_BETA,\Beta
+Γ,U+0393,TX_GAMMA,\Gamma
+Δ,U+0394,TX_DELTA,\Delta
+Ε,U+0395,TX_EPSILON,\Epsilon
+Ζ,U+0396,TX_ZETA,\Zeta
+Η,U+0397,TX_ETA,\Eta
+Θ,U+0398,TX_THETA,\Theta
+Ι,U+0399,TX_IOTA,\Iota
+Κ,U+039A,TX_KAPPA,\Kappa
+Λ,U+039B,TX_LAMBDA,\Lambda
+Μ,U+039C,TX_MU,\Mu
+Ν,U+039D,TX_NU,\Nu
+Ξ,U+039E,TX_XI,\Xi
+Ο,U+039F,TX_OMICRON,\Omicron
+Π,U+03A0,TX_PI,\Pi
+Ρ,U+03A1,TX_RHO,\Rho
+Σ,U+03A3,TX_SIGMA,\Sigma
+Τ,U+03A4,TX_TAU,\Tau
+Υ,U+03A5,TX_UPSILON,\Upsilon
+Φ,U+03A6,TX_PHI,\Phi
+Χ,U+03A7,TX_CHI,\Chi
+Ψ,U+03A8,TX_PSI,\Psi
+Ω,U+03A9,TX_OMEGA,\Omega
+
+æ,U+00E6,TX_ae,{\ae}
+ß,U+00DF,TX_SS,{\ss}
+ø,U+00F8,TX_oDK,{\o}
+ℏ,U+210F,TX_hbar,\hbar
+
+⌀,U+2300,TX_DIAM,{\diameter}
+∈,U+2208,TX_ElOf,\in
+∝,U+221D,TX_PROP,\propto
+____,____,TX_BIN,
+____,____,TX_SUB,
+____,____,TX_SUP,
+°,U+00B0,TX_DEG,^\circ
+
+____,____,TX_FRAC,
+√,U+221A,TX_SQRT,\sqrt{}
+×,U+00D7,TX_TIMES,\times
+÷,U+00F7,TX_DIV,\div
+∼,U+223C,TX_SIM,\sim
+≈,U+2248,TX_APRROX,\approx
+≠,U+2260,TX_NEQ,\neq
+≥,U+2265,TX_G8TEQ,\geq
+≤,U+2264,TX_LSTEQ,\leq
+≫,U+226B,TX_MCHGR,\gg
+≪,U+226A,TX_MCHLS,\ll
+№,U+2116,TX_No,No
+∀,U+2200,,\forall
+±,U+00B1,TX_PM,\pm
+∓,U+2213,TX_MP,\mp
+∇,U+2207,TX_NABLA,\nabla
+∂,U+2202,TX_PDIFF,\partial
+∫,U+222B,TX_INT,\int
+∬,U+222C,TX_2INT,\iint
+∭,U+222D,TX_3INT,\iiint
+∮,U+222E,TX_INT_CIRC,\oint
+∯,U+222F,TX_INT_CIRC2,\oiint
+∰,U+2230,TX_INT_CIRC3,\oiiint
+∗,U+2217,TX_CONV,\ast
+⋅,U+22C5,TX_DOT,\cdot
+⊕,U+2295,TX_CIRCPLUS,\oplus
+⊗,U+2297,TX_CIRCPROD,\otimes
+⊙,U+2299,TX_CIRCDOT,\odot
+○,U+25CB,TX_Circ,\circ
+∑,U+2211,TX_SUM,\sum
+∏,U+220F,TX_PROD,\prod
+⇒,U+21D2,TX_IMPLIES,\Rightarrow
+↦,U+21A6,TX_MAP,\mapsto
+←,U+2190,,\leftarrow
+→,U+2192,TX_RARROW,\rightarrow
+⌊,U+230A,TX_FLOOR,\lfloor
+⌋,U+230B,,\rfloor
+⌈,U+2308,TX_CEIL,\lceil
+⌉,U+2309,,\rceil
+ℜ,U+211C,TX_REAL,\Re
+ℑ,U+2111,TX_IMAG,\Im
+ℵ,U+2135,TX_ALEPH,\aleph
+†,U+2020,TX_DAGGER,\dagger
+…,U+2026,TX_ELIPS,\ldots
+∞,U+221E,TX_INF,\infty
+∠,U+2220,TX_ANGLE,\angle
+∥,U+2225,TX_PARALLEL,\parallel
+⊥,U+22A5,TX_PERP,\perp
+⟨,U+27E8,TX_BRA,\langle
+⟩,U+27E9,TX_KET,\rangle
+∴,U+2234,TX_THEREFORE,\therefore
+s̅,U+0073 U+0305,TX_Overbar,\overline{s}
+̲,U+0332,TX_Underbar,\underline{}
+♯,U+266F,TX_Sharp,\sharp
+♭,U+266D,TX_Flat,\flat
+♮,U+266E,TX_Natural,\natural
+
+ℓ,U+2113,TX_QNoL,\ell
+℮,U+212E,TX_EST,
+
+____,____,TX_MIT,\mathit{}
+____,____,TX_MBF,\mathbf{}
+____,____,TX_MDS,\mathbb{}
+____,____,TX_Mtt,\mathtt{}
+____,____,TX_MFRAK,\mathfrak{}
+____,____,TX_MCAL,\mathcal{}
+____,____,TX_SI,\SI{}{}
+
+̀,U+0300,TX_CMB_GRAVE,\grave{}
+́,U+0301,TX_CMB_ACUTE,\acute{}
+̂,U+0302,TX_CMB_HAT,\hat{}
+̃,U+0303,TX_CMB_TILDE,\tilde{}
+̄,U+0304,TX_CMB_BAR,\bar{}
+̅,U+0305,TX_CMB_OVERLINE,\overline{}
+̆,U+0306,TX_CMB_BREVE,\breve{}
+̇,U+0307,TX_CMB_DOT,\dot{}
+̈,U+0308,TX_CMB_DDOT,\ddot{}
+̊,U+030A,TX_CMB_RING,\mathring{}
+̋,U+030B,TX_CMB_DACUTE,\H{}
+̌,U+030C,TX_CMB_CARON,\check{}
+̣,U+0323,TX_CMB_DOT_BELOW,\d{}
+̧,U+0327,TX_CMB_CEDILLA,\c{}
+̨,U+0328,TX_CMB_OGONEK,\k{}
+⃗,U+20D7,TX_CMB_VEC,\vec{}
