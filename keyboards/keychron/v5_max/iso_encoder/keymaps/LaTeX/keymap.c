@@ -173,6 +173,7 @@ enum custom_keycodes {
     TX_MCAL,
     TX_SI,
 
+    FN_SCRSHT,
     FN_WIKI,
     FN_EMOJI,
     FN_ROMAN
@@ -183,7 +184,7 @@ enum custom_keycodes {
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [MAC_BASE] = LAYOUT_iso_99(
-        KC_ESC,             KC_BRID,  KC_BRIU,  KC_MCTRL, KC_LNPAD, RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  FN_WIKI,  KC_WWW_SEARCH,    FN_EMOJI,  FN_ROMAN,            KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
+        KC_ESC,             KC_MPLY,  KC_MUTE,  _______, _______, KC_BRID,  KC_BRIU,  RGB_MOD,  LGUI(LSFT(KC_4)),  FN_WIKI,  KC_WWW_SEARCH,    FN_EMOJI,  FN_ROMAN,            KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
         KC_NUBS,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            KC_NUM,   KC_PSLS,  KC_PAST,    KC_PMNS,
         KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,    KC_RBRC,                      KC_P7,    KC_P8,    KC_P9,      KC_PPLS,
         KC_CAPS,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,    KC_NUHS,  KC_ENT,             KC_P4,    KC_P5,    KC_P6,
@@ -194,8 +195,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,            KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             _______,  _______,  _______,    RGB_TOG,
         _______,  BT_HST1,  BT_HST2,  BT_HST3,  P2P4G,    _______,  _______,  _______,  _______,  _______,  _______,  _______,    _______,  _______,            _______,  _______,  _______,    _______,
         RGB_TOG,  RGB_MOD,  RGB_VAI,  RGB_HUI,  RGB_SAI,  RGB_SPI,  _______,  _______,  _______,  _______,  _______,  _______,    _______,                      _______,  _______,  _______,    _______,
-        _______,  RGB_RMOD, RGB_VAD,  RGB_HUD,  RGB_SAD,  RGB_SPD,  _______,  _______,  _______,  _______,  _______,  _______,    _______,  _______,            _______,  _______,  _______,
-        TG(UC_BASE),  _______,  _______,  _______,  _______,  _______,  BAT_LVL,  NK_TOGG,  _______,  _______,  _______,  _______,    TG(LATEX_BASE),  _______,     _______,  _______,  _______,    _______,
+        TG(UC_BASE),  RGB_RMOD, RGB_VAD,  RGB_HUD,  RGB_SAD,  RGB_SPD,  _______,  _______,  _______,  _______,  _______,  _______,    _______,  _______,            _______,  _______,  _______,
+        _______,  _______,  _______,  _______,  _______,  _______,  BAT_LVL,  NK_TOGG,  _______,  _______,  _______,  _______,    TG(LATEX_BASE),  _______,     _______,  _______,  _______,    _______,
         _______,  _______,  _______,                                _______,                                _______,  _______,    _______,  _______,  _______,  _______,  _______,  _______            ),
 
     [WIN_BASE] = LAYOUT_iso_99(
@@ -550,6 +551,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
             SEND_STRING("\\frac{}{}");
             tap_code(KC_LEFT);
+            tap_code(KC_LEFT);
+            tap_code(KC_LEFT);
             }
             return false;
         case TX_SQRT:
@@ -818,9 +821,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 SEND_STRING("I = 1"SS_TAP(X_ENT)"V = 5"SS_TAP(X_ENT)"X = 10"SS_TAP(X_ENT)"L = 50"SS_TAP(X_ENT)"C = 100"SS_TAP(X_ENT)"D = 500"SS_TAP(X_ENT)"M = 1,000"SS_TAP(X_ENT));
                 }
                 return false;
+        case TX_Natural:
+            if (record->event.pressed) {
+                SEND_STRING("\\natural");
+            }
+            return false;
     }
-
-
     return true;
 }  
 
