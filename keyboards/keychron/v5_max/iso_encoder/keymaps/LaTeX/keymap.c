@@ -249,7 +249,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [UC_BASE] = LAYOUT_iso_99(
         TG(UC_BASE),        KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,    KC_MUTE,
-        UC(0x0300),   UC(0x0301),     UC(0x0302),     UC(0x0304),     UC(0x030A),     UC(0x0307),     UC(0x0308),     UC(0x0305),     UC(0x0332),     UC(0x20D7),     UC(0x00B0),     KC_MINS,    KC_EQL,   KC_BSPC,            UC(0x2044), UC(0x221A), UC(0x00D7), UC(0x2112),
+        UC(0x0300),   UC(0x0301),     UC(0x0302),     UC(0x030C),     UC(0x0303),     UC(0x0327),     UC(0x030A),     UC(0x0307),     UC(0x0308),     UC(0x0305),     UC(0x00B0),     KC_MINS,    KC_EQL,   KC_BSPC,   UC(0x2044), UC(0x221A), UC(0x00D7), UC(0x2112),
         _______,   UC(0x03C8), UC(0x03C9), UC(0x03B5), UC(0x03C1), UC(0x03C4), UC(0x03C5), UC(0x00E6),    UC(0x00DF),     UC(0x00F8),     UC(0x03C0), KC_LBRC,    KC_RBRC,                     UC(0x2202), UC(0x222B), UC(0x22C5), UC(0x2020),
         _______,  UC(0x03B1), UC(0x03C3), UC(0x03B4), UC(0x03C6), UC(0x03B3), UC(0x210F),      UC(0x03B8), UC(0x03BA), UC(0x03BB), KC_SCLN, KC_QUOT,    KC_NUHS,  KC_ENT,            UC(0x2211),   _______,  UC(0x21D2),
         MO(UC_SHIFT), KC_NUBS, UC(0x03B6), UC(0x03BE), UC(0x03C7), UC(0x03BD), UC(0x03B2), UC(0x03B7), UC(0x03BC), KC_COMM,  KC_DOT,   KC_SLSH,      _______,  _______,  _______,  UC(0x230A), UC(0x22A5), UC(0x2111),
