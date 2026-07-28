@@ -93,6 +93,7 @@ enum custom_keycodes {
     TX_LIM, //
     TX_SIM,
     TX_APRROX,
+    TX_ALMOST,
     TX_NEQ,
     TX_TIMES,
     TX_DIV,
@@ -228,8 +229,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     TX_MIT,     TX_MBF,     TX_MDS,     TX_Mtt,     TX_MFRK,     TX_MCAL,    TX_SI,   KC_BSPC,            KC_NUM,   KC_PSLS,  KC_PAST,    KC_PMNS,
         _______,  TX_PSI,   TX_OMEGA, TX_EPSILON, TX_RHO, TX_TAU,   TX_UPSILON, TX_ae,    TX_SS,     TX_oDK,     TX_PI,    TX_FLOOR,    TX_CEIL,                      KC_P7,    KC_P8,    KC_P9,      KC_PPLS,
         _______,  TX_ALPHA, TX_SIGMA, TX_DELTA,   TX_PHI, TX_GAMMA, TX_hbar,      TX_THETA, TX_KAPPA, TX_LAMBDA, TX_THEREFORE, TX_theta_alt,    TX_SUP,  KC_ENT,             KC_P4,    KC_P5,    KC_P6,
-        _______,  KC_NUBS,  TX_ZETA,  TX_XI,      TX_CHI, TX_NU,    _______,      TX_ETA,   TX_MU,    TX_MCHLS,  TX_MCHGR,   TX_EST,              KC_RSFT,  KC_UP,    KC_P1,    TX_CEIL,    KC_P3,      TX_REAL,
-        _______,  _______,  _______,                                KC_SPC,                                 _______,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_P0,    KC_PDOT            ),
+        _______,  KC_NUBS,  TX_ZETA,  TX_XI,      TX_CHI, TX_NU,    _______,      TX_ETA,   TX_MU,    TX_MCHLS,  TX_MCHGR,   TX_EST,              KC_RSFT,  KC_UP,    TX_APRROX,    TX_CEIL,    KC_P3,      TX_REAL,
+        _______,  _______,  _______,                                KC_SPC,                                 _______,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  TX_2INT,    KC_PDOT            ),
 
     [LATEX_LCRTL] = LAYOUT_iso_99(
         TG(LATEX_BASE),     KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
@@ -237,7 +238,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,    KC_RBRC,                      KC_P7,    KC_P8,    TX_Sharp,      KC_PPLS,
         KC_CAPS,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,    KC_NUHS,  KC_ENT,             KC_P4,    KC_P5,    KC_P6,
         _______,  KC_NUBS,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,  KC_UP,    KC_P1,    KC_P2,    KC_P3,      KC_PENT,
-        _______,  _______,  KC_LALT,                                KC_SPC,                                 KC_RALT,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_P0,    KC_PDOT            ),
+        _______,  _______,  KC_LALT,                                KC_SPC,                                 KC_RALT,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  TX_3INT,    KC_PDOT            ),
 
     [LATEX_RCRTL] = LAYOUT_iso_99(
         TG(LATEX_BASE),     KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
