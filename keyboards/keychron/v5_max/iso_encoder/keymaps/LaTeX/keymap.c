@@ -93,7 +93,6 @@ enum custom_keycodes {
     TX_LIM, //
     TX_SIM,
     TX_APRROX,
-    TX_ALMOST,
     TX_NEQ,
     TX_TIMES,
     TX_DIV,
