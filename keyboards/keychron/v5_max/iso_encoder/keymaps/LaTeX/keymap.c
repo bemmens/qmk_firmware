@@ -85,6 +85,9 @@ enum custom_keycodes {
     TX_CHI,
     TX_PSI,
     TX_OMEGA,
+    TX_SUBSET,
+    TX_VARPHI,
+    TX_VARTHETA,
 
     // Operators
     TX_FRAC, //
@@ -135,6 +138,10 @@ enum custom_keycodes {
     TX_CIRCPLUS,
     TX_CIRCPROD,
     TX_CIRCDOT,
+    TX_LRARROW,
+    TX_DEFEQ,
+    TX_INTERSECTION,
+    TX_UNION,
 
     // misc
     TX_Circ,
@@ -161,6 +168,12 @@ enum custom_keycodes {
     TX_EST,
     TX_RAND,
     TX_UCRAND,
+    TX_FORALL,
+    TX_MAPSTO,
+    TX_REVERSIBLE,
+
+    TX_UNDERSCORE,
+    TX_UUNDERSCORE,
 
     // LATEX Music
     TX_Sharp,
@@ -220,7 +233,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [LATEX_BASE] = LAYOUT_iso_99(
         TG(LATEX_BASE),     KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             TX_FRAC,   TX_SQRT,  TX_LIM,    KC_MUTE,
-        KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     TX_DEG,     TX_BIN,    TX_NEQ,   KC_BSPC,            _______,  TX_DIV,  TX_CONV,    TX_DIAM,
+        KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     TX_DEG,     TX_BIN,    TX_NEQ,   KC_BSPC,            _______,  TX_DIV,  TX_CONV,    TX_SUBSET,
         _______,   TX_psi,   TX_omega, TX_epsilon, TX_rho, TX_tau,   TX_upsilon, TX_ae,    TX_SS,     TX_oDK,     TX_pi,    TX_BRA,    TX_KET,                     TX_ElOf, TX_PERP, TX_Natural,    TX_PROD,
         _______,  TX_alpha, TX_sigma, TX_delta,   TX_phi, TX_gamma, TX_hbar,      TX_theta, TX_kappa, TX_lambda, TX_ELIPS, TX_QNoL,    TX_SUB,  KC_ENT,            TX_CIRCPLUS,   TX_RAND,  TX_INF,
         MO(LATEX_SHIFT), TX_sigma_alt, TX_zeta, TX_xi, TX_chi, TX_nu,    TX_beta,      TX_eta,   TX_mu,    TX_LSTEQ,  TX_G8TEQ,   TX_No,      TG(LATEX_BASE),  _______,  TX_PROP,  TX_PDIFF, TX_RRARROW,   TX_REAL,
@@ -228,24 +241,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [LATEX_SHIFT] = LAYOUT_iso_99(
         TG(LATEX_BASE),     KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
-        KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     TX_MIT,     TX_MBF,     TX_MDS,     TX_Mtt,     TX_MFRK,     TX_MCAL,    TX_SI,   KC_BSPC,            KC_NUM,   KC_PSLS,  KC_PAST,    KC_PMNS,
-        _______,  TX_PSI,   TX_OMEGA, TX_EPSILON, TX_RHO, TX_TAU,   TX_UPSILON, TX_ae,    TX_SS,     TX_oDK,     TX_PI,    TX_FLOOR,    TX_CEIL,                      KC_P7,    KC_P8,    KC_P9,      TX_SUM,
-        _______,  TX_ALPHA, TX_SIGMA, TX_DELTA,   TX_PHI, TX_GAMMA, TX_hbar,      TX_THETA, TX_KAPPA, TX_LAMBDA, TX_THEREFORE, TX_theta_alt,    TX_SUP,  KC_ENT,             KC_P4,    KC_P5,    KC_P6,
-        _______,  KC_NUBS,  TX_ZETA,  TX_XI,      TX_CHI, TX_NU,    _______,      TX_ETA,   TX_MU,    TX_MCHLS,  TX_MCHGR,   TX_EST,              KC_RSFT,  KC_UP,    TX_APRROX,    TX_CEIL,    KC_P3,      TX_IMAG,
-        _______,  _______,  _______,                                KC_SPC,                                 _______,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  TX_2INT,    KC_PDOT            ),
+        KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     TX_MIT,     TX_MBF,     TX_MDS,     TX_Mtt,     TX_MFRK,     TX_MCAL,    TX_SI,   KC_BSPC,            KC_NUM,   TX_UUNDERSCORE,  TX_TIMES,    TX_INTERSECTION,
+        _______,  TX_PSI,   TX_OMEGA, TX_EPSILON, TX_RHO, TX_TAU,   TX_UPSILON, TX_ae,    TX_SS,     TX_oDK,     TX_PI,    TX_FLOOR,    TX_CEIL,                      TX_FORALL,    TX_ANGLE,    TX_Flat,      TX_SUM,
+        _______,  TX_ALPHA, TX_SIGMA, TX_DELTA,   TX_PHI, TX_GAMMA, TX_hbar,      TX_THETA, TX_KAPPA, TX_LAMBDA, TX_THEREFORE, TX_theta_alt,    TX_SUP,  KC_ENT,             TX_CIRCPROD,    _______,    TX_ALEPH,
+        _______,  TX_VARPHI,  TX_ZETA,  TX_XI,      TX_CHI, TX_NU,    _______,      TX_ETA,   TX_MU,    TX_MCHLS,  TX_MCHGR,   TX_EST,              KC_RSFT,  KC_UP,    TX_APRROX,    TX_NABLA,    TX_LRARROW,      TX_IMAG,
+        _______,  _______,  _______,                                KC_SPC,                                 _______,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  TX_2INT,    TX_LARROW            ),
 
     [LATEX_LCRTL] = LAYOUT_iso_99(
         TG(LATEX_BASE),     KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
-        KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            KC_NUM,   KC_PSLS,  KC_PAST,    KC_PMNS,
-        KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,    KC_RBRC,                      KC_P7,    KC_P8,    TX_Sharp,      KC_PPLS,
-        KC_CAPS,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,    KC_NUHS,  KC_ENT,             KC_P4,    KC_P5,    KC_P6,
-        _______,  KC_NUBS,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,  KC_UP,    KC_P1,    KC_P2,    KC_P3,      KC_PENT,
-        _______,  _______,  KC_LALT,                                KC_SPC,                                 KC_RALT,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  TX_3INT,    KC_PDOT            ),
+    KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            KC_NUM,   TX_UNDERSCORE,  TX_DOT,    TX_UNION,
+        KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,    KC_RBRC,                      TX_DIAM,    TX_PARALLEL,    TX_Sharp,      _______,
+        KC_CAPS,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,    KC_NUHS,  KC_ENT,             TX_CIRCDOT,    _______,    TX_DAGGER,
+        _______,  KC_NUBS,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,  KC_UP,    TX_DEFEQ,    TX_INT_CIRC,    TX_REVERSIBLE,      _______,
+        _______,  _______,  KC_LALT,                                KC_SPC,                                 KC_RALT,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  TX_3INT,    TX_MAPSTO           ),
 
     [LATEX_RCRTL] = LAYOUT_iso_99(
         TG(LATEX_BASE),     KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
         KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            KC_NUM,   KC_PSLS,  KC_PAST,    KC_PMNS,
-        _______,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,    KC_RBRC,                      KC_P7,    KC_P8,    TX_Flat,      KC_PPLS,
+        _______,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,    KC_RBRC,                      KC_P7,    KC_P8,    TX_Sharp,      KC_PPLS,
         _______,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,    KC_NUHS,  KC_ENT,             KC_P4,    KC_P5,    KC_P6,
         _______,  KC_NUBS,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,  KC_UP,    KC_P1,    KC_P2,    KC_P3,      KC_PENT,
         _______,  _______,  _______,                                KC_SPC,                                 _______,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_P0,    KC_PDOT            ),
@@ -781,6 +794,118 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             SEND_STRING("\\propto");
             }
             return false;
+        case TX_SUBSET:
+            if (record->event.pressed) {
+            SEND_STRING("\\subset");
+            }
+            return false;
+        case TX_FORALL:
+            if (record->event.pressed) {
+            SEND_STRING("\\forall");
+            }
+            return false;
+        case TX_LARROW:
+            if (record->event.pressed) {
+            SEND_STRING("\\leftarrow");
+            }
+            return false;
+        case TX_LRARROW:
+            if (record->event.pressed) {
+            SEND_STRING("\\Leftrightarrow");
+            }
+            return false;
+        case TX_MAPSTO:
+            if (record->event.pressed) {
+            SEND_STRING("\\mapsto");
+            }
+            return false;
+        case TX_REVERSIBLE:
+            if (record->event.pressed) {
+            SEND_STRING("\\rightleftharpoons");
+            }
+            return false;
+        case TX_DEFEQ:
+            if (record->event.pressed) {
+            SEND_STRING("\\coloneqq");
+            }
+            return false;
+        case TX_CIRCDOT:
+            if (record->event.pressed) {
+            SEND_STRING("\\odot");
+            }
+            return false;
+        case TX_DIAM:
+            if (record->event.pressed) {
+            SEND_STRING("\\diameter");
+            }
+            return false;
+        case TX_UNDERSCORE:
+            if (record->event.pressed) {
+            SEND_STRING("\\underline{}");
+            tap_code(KC_LEFT);
+            }
+            return false;
+        case TX_UNION:
+            if (record->event.pressed) {
+            SEND_STRING("\\cup");
+            }
+            return false;
+        case TX_INTERSECTION:
+            if (record->event.pressed) {
+            SEND_STRING("\\cap");
+            }
+            return false;
+        case TX_EST:
+        //  \usepackage{textcomp}
+            if (record->event.pressed) {
+            SEND_STRING("\\textestimated"); 
+            }
+            return false;
+        case TX_theta_alt:
+            if (record->event.pressed) {
+            SEND_STRING("\\vartheta");
+            }
+            return false;
+        case TX_ElOf:
+            if (record->event.pressed) {
+            SEND_STRING("\\in");
+            }
+            return false;
+        case TX_VARPHI:
+            if (record->event.pressed) {
+            SEND_STRING("\\varphi");
+            }
+            return false;
+        case TX_Flat:
+            if (record->event.pressed) {
+            SEND_STRING("\\flat");
+            }
+            return false;
+        case TX_RARROW:
+            if (record->event.pressed) {
+            SEND_STRING("\\rightarrow");
+            }
+            return false;
+        case TX_BIN:
+            if (record->event.pressed) {
+            SEND_STRING("\\binom{}{}");
+            tap_code(KC_LEFT);
+            tap_code(KC_LEFT);
+            tap_code(KC_LEFT);
+            }
+            return false;
+        case TX_UUNDERSCORE:
+            if (record->event.pressed) {
+            SEND_STRING("\\underline{\\underline{}}");
+            tap_code(KC_LEFT);
+            tap_code(KC_LEFT);
+            }
+            return false;
+        case TX_DEG:
+            if (record->event.pressed) {
+            SEND_STRING("\\degree");
+            }
+            return false;
         case TX_PDIFF:
             if (record->event.pressed) {
             SEND_STRING("\\partial");
@@ -847,7 +972,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         case TX_No:
             if (record->event.pressed) {
-            SEND_STRING("\\neg");
+            SEND_STRING("\\textnumero");
             }
             return false;
         case TX_QNoL:
