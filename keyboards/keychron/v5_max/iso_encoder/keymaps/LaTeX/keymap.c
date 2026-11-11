@@ -157,7 +157,10 @@ enum custom_keycodes {
     TX_PROP,
     TX_RARROW,
     TX_LARROW,
+    TX_RRARROW,
     TX_EST,
+    TX_RAND,
+    TX_UCRAND,
 
     // LATEX Music
     TX_Sharp,
@@ -218,17 +221,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [LATEX_BASE] = LAYOUT_iso_99(
         TG(LATEX_BASE),     KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             TX_FRAC,   TX_SQRT,  TX_LIM,    KC_MUTE,
         KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     TX_DEG,     TX_BIN,    TX_NEQ,   KC_BSPC,            _______,  TX_DIV,  TX_CONV,    TX_DIAM,
-        _______,   TX_psi,   TX_omega, TX_epsilon, TX_rho, TX_tau,   TX_upsilon, TX_ae,    TX_SS,     TX_oDK,     TX_pi,    TX_BRA,    TX_KET,                     TX_ElOf, TX_PERP, TX_Natural,    TX_REAL,
-        _______,  TX_alpha, TX_sigma, TX_delta,   TX_phi, TX_gamma, TX_hbar,      TX_theta, TX_kappa, TX_lambda, TX_ELIPS, TX_QNoL,    TX_SUB,  KC_ENT,            TX_CIRCPLUS,   TX_PM,  TX_INF,
-        MO(LATEX_SHIFT), TX_sigma_alt, TX_zeta, TX_xi, TX_chi, TX_nu,    TX_beta,      TX_eta,   TX_mu,    TX_LSTEQ,  TX_G8TEQ,   TX_No,      TG(LATEX_BASE),  _______,  _______,  TX_PROP, TX_PDIFF,   TX_SUM,
+        _______,   TX_psi,   TX_omega, TX_epsilon, TX_rho, TX_tau,   TX_upsilon, TX_ae,    TX_SS,     TX_oDK,     TX_pi,    TX_BRA,    TX_KET,                     TX_ElOf, TX_PERP, TX_Natural,    TX_PROD,
+        _______,  TX_alpha, TX_sigma, TX_delta,   TX_phi, TX_gamma, TX_hbar,      TX_theta, TX_kappa, TX_lambda, TX_ELIPS, TX_QNoL,    TX_SUB,  KC_ENT,            TX_CIRCPLUS,   TX_RAND,  TX_INF,
+        MO(LATEX_SHIFT), TX_sigma_alt, TX_zeta, TX_xi, TX_chi, TX_nu,    TX_beta,      TX_eta,   TX_mu,    TX_LSTEQ,  TX_G8TEQ,   TX_No,      TG(LATEX_BASE),  _______,  TX_PROP,  TX_PDIFF, TX_RRARROW,   TX_REAL,
         MO(LATEX_LCRTL), _______,  _______,                                _______,                     _______,  MO(LATEX_RCRTL), _______,  _______,  _______,  _______,  TX_INT,    TX_RARROW            ),
 
     [LATEX_SHIFT] = LAYOUT_iso_99(
         TG(LATEX_BASE),     KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
         KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     TX_MIT,     TX_MBF,     TX_MDS,     TX_Mtt,     TX_MFRK,     TX_MCAL,    TX_SI,   KC_BSPC,            KC_NUM,   KC_PSLS,  KC_PAST,    KC_PMNS,
-        _______,  TX_PSI,   TX_OMEGA, TX_EPSILON, TX_RHO, TX_TAU,   TX_UPSILON, TX_ae,    TX_SS,     TX_oDK,     TX_PI,    TX_FLOOR,    TX_CEIL,                      KC_P7,    KC_P8,    KC_P9,      KC_PPLS,
+        _______,  TX_PSI,   TX_OMEGA, TX_EPSILON, TX_RHO, TX_TAU,   TX_UPSILON, TX_ae,    TX_SS,     TX_oDK,     TX_PI,    TX_FLOOR,    TX_CEIL,                      KC_P7,    KC_P8,    KC_P9,      TX_SUM,
         _______,  TX_ALPHA, TX_SIGMA, TX_DELTA,   TX_PHI, TX_GAMMA, TX_hbar,      TX_THETA, TX_KAPPA, TX_LAMBDA, TX_THEREFORE, TX_theta_alt,    TX_SUP,  KC_ENT,             KC_P4,    KC_P5,    KC_P6,
-        _______,  KC_NUBS,  TX_ZETA,  TX_XI,      TX_CHI, TX_NU,    _______,      TX_ETA,   TX_MU,    TX_MCHLS,  TX_MCHGR,   TX_EST,              KC_RSFT,  KC_UP,    TX_APRROX,    TX_CEIL,    KC_P3,      TX_REAL,
+        _______,  KC_NUBS,  TX_ZETA,  TX_XI,      TX_CHI, TX_NU,    _______,      TX_ETA,   TX_MU,    TX_MCHLS,  TX_MCHGR,   TX_EST,              KC_RSFT,  KC_UP,    TX_APRROX,    TX_CEIL,    KC_P3,      TX_IMAG,
         _______,  _______,  _______,                                KC_SPC,                                 _______,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  TX_2INT,    KC_PDOT            ),
 
     [LATEX_LCRTL] = LAYOUT_iso_99(
@@ -251,7 +254,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TG(UC_BASE),        KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,    KC_MUTE,
         UC(0x0300),   UC(0x0301),     UC(0x0302),     UC(0x030C),     UC(0x0303),     UC(0x0327),     UC(0x030A),     UC(0x0307),     UC(0x0308),     UC(0x0305),     UC(0x00B0),     KC_MINS,    KC_EQL,   KC_BSPC,   UC(0x2044), UC(0x221A), UC(0x00D7), UC(0x2112),
         _______,   UC(0x03C8), UC(0x03C9), UC(0x03B5), UC(0x03C1), UC(0x03C4), UC(0x03C5), UC(0x00E6),    UC(0x00DF),     UC(0x00F8),     UC(0x03C0), KC_LBRC,    KC_RBRC,                     UC(0x2202), UC(0x222B), UC(0x22C5), UC(0x2020),
-        _______,  UC(0x03B1), UC(0x03C3), UC(0x03B4), UC(0x03C6), UC(0x03B3), UC(0x210F),      UC(0x03B8), UC(0x03BA), UC(0x03BB), KC_SCLN, KC_QUOT,    KC_NUHS,  KC_ENT,            UC(0x2211),   _______,  UC(0x21D2),
+        _______,  UC(0x03B1), UC(0x03C3), UC(0x03B4), UC(0x03C6), UC(0x03B3), UC(0x210F),      UC(0x03B8), UC(0x03BA), UC(0x03BB), KC_SCLN, KC_QUOT,    KC_NUHS,  KC_ENT,            UC(0x2211),   TX_UCRAND,  UC(0x21D2),
         MO(UC_SHIFT), KC_NUBS, UC(0x03B6), UC(0x03BE), UC(0x03C7), UC(0x03BD), UC(0x03B2), UC(0x03B7), UC(0x03BC), KC_COMM,  KC_DOT,   KC_SLSH,      _______,  _______,  _______,  UC(0x230A), UC(0x22A5), UC(0x2111),
         MO(UC_LCRTL), KC_LWIN, KC_LALT,                                KC_SPC,                     KC_RALT,  MO(UC_RCRTL), KC_RCTL,  _______,  _______,  _______,  KC_P0,    KC_PDOT            ),
 
@@ -547,6 +550,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             SEND_STRING("\\Omega");
             }
             return false;
+        case TX_sigma_alt:
+            if (record->event.pressed) {
+            SEND_STRING("\\varsigma");
+            }
+            return false;        
         case TX_FRAC:
             if (record->event.pressed) {
             SEND_STRING("\\frac{}{}");
@@ -611,11 +619,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case TX_NABLA:
             if (record->event.pressed) {
             SEND_STRING("\\nabla");
-            }
-            return false;
-        case TX_PDIFF:
-            if (record->event.pressed) {
-            SEND_STRING("\\partial");
             }
             return false;
         case TX_INT:
@@ -761,6 +764,67 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             SEND_STRING("\\ldots");
             }
             return false;
+        case TX_SUB:
+            if (record->event.pressed) {
+            SEND_STRING("_{}");
+            tap_code(KC_LEFT);
+            }
+            return false;
+        case TX_SUP:
+            if (record->event.pressed) {
+            SEND_STRING("^{}");
+            tap_code(KC_LEFT);
+            }
+            return false;
+        case TX_PROP:
+            if (record->event.pressed) {
+            SEND_STRING("\\propto");
+            }
+            return false;
+        case TX_PDIFF:
+            if (record->event.pressed) {
+            SEND_STRING("\\partial");
+            }
+            return false;
+        case TX_RRARROW:
+            if (record->event.pressed) {
+            SEND_STRING("\\Rightarrow");
+            }
+            return false;
+        case TX_RAND:
+            if (record->event.pressed) {
+                static const char *const greek_strings[] = {
+                    "\\alpha", "\\beta", "\\gamma", "\\Gamma",
+                    "\\delta", "\\Delta", "\\epsilon", "\\varepsilon",
+                    "\\zeta", "\\eta", "\\theta", "\\vartheta",
+                    "\\iota", "\\kappa", "\\lambda", "\\Lambda",
+                    "\\mu", "\\nu", "\\xi", "\\Xi",
+                    "\\pi", "\\varpi", "\\rho", "\\varrho",
+                    "\\sigma", "\\varsigma", "\\tau", "\\upsilon",
+                    "\\phi", "\\varphi", "\\chi", "\\psi",
+                    "\\Psi", "\\omega", "\\Omega"
+                };
+                const uint8_t greek_index = random() % (sizeof(greek_strings) / sizeof(greek_strings[0]));
+                SEND_STRING(greek_strings[greek_index]);
+            }
+            return false;
+        case TX_UCRAND:
+            if (record->event.pressed) {
+                static const uint16_t greek_codepoints[] = {
+                    0x03B1, 0x03B2, 0x03B3, 0x0393,
+                    0x03B4, 0x0394, 0x03B5, 0x03F5,
+                    0x03B6, 0x03B7, 0x03B8, 0x03D1,
+                    0x03B9, 0x03BA, 0x03BB, 0x039B,
+                    0x03BC, 0x03BD, 0x03BE, 0x039E,
+                    0x03C0, 0x03D6, 0x03C1, 0x03F1,
+                    0x03C3, 0x03C2, 0x03C4, 0x03C5,
+                    0x03C6, 0x03D5, 0x03C7, 0x03C8,
+                    0x03A8, 0x03C9, 0x03A9
+                };
+                const uint8_t greek_index = random() % (sizeof(greek_codepoints) / sizeof(greek_codepoints[0]));
+                register_unicode(greek_codepoints[greek_index]);
+            }
+            return false;
         case TX_G8TEQ:
             if (record->event.pressed) {
             SEND_STRING("\\geq");
@@ -788,7 +852,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         case TX_QNoL:
             if (record->event.pressed) {
-            SEND_STRING("\\forall");
+            SEND_STRING("\\ell");
             }
             return false;
         case TX_CIRCPLUS:
@@ -871,5 +935,4 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     }
     return state;
 }
-
 
