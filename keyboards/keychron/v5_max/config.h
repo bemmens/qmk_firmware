@@ -75,3 +75,5 @@
 #define P2P4G_CELAR_MASK 0
 
 #define MATRIX_IO_DELAY 10
+
+#define DEBOUNCE 50
