@@ -127,7 +127,7 @@ ____,____,TX_MIT,\mathit{}
 ____,____,TX_MBF,\mathbf{}
 ____,____,TX_MDS,\mathbb{}
 ____,____,TX_Mtt,\mathtt{}
-____,____,TX_MFRAK,\mathfrak{}
+____,____,TX_MFRK,\mathfrak{}
 ____,____,TX_MCAL,\mathcal{}
 ____,____,TX_SI,\SI{}{}
 
@@ -147,4 +147,3 @@ ____,____,TX_SI,\SI{}{}
 ̧,U+0327,TX_CMB_CEDILLA,\c{}
 ̨,U+0328,TX_CMB_OGONEK,\k{}
 ⃗,U+20D7,TX_CMB_VEC,\vec{}
-

@@ -954,6 +954,51 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 register_unicode(greek_codepoints[greek_index]);
             }
             return false;
+        case TX_MIT:
+            if (record->event.pressed) {
+                SEND_STRING("\\mathit{}");
+                tap_code(KC_LEFT);
+            }
+            return false;
+        case TX_MBF:
+            if (record->event.pressed) {
+                SEND_STRING("\\mathbf{}");
+                tap_code(KC_LEFT);
+            }
+            return false;
+        case TX_MDS:
+            if (record->event.pressed) {
+                SEND_STRING("\\mathbb{}");
+                tap_code(KC_LEFT);
+            }
+            return false;
+        case TX_Mtt:
+            if (record->event.pressed) {
+                SEND_STRING("\\mathtt{}");
+                tap_code(KC_LEFT);
+            }
+            return false;
+        case TX_MFRK:
+            if (record->event.pressed) {
+                SEND_STRING("\\mathfrak{}");
+                tap_code(KC_LEFT);
+            }
+            return false;
+        case TX_MCAL:
+            if (record->event.pressed) {
+                SEND_STRING("\\mathcal{}");
+                tap_code(KC_LEFT);
+            }
+            return false;
+        case TX_SI:
+            if (record->event.pressed) {
+                SEND_STRING("\\SI{}{}");
+                tap_code(KC_LEFT);
+                tap_code(KC_LEFT);
+                tap_code(KC_LEFT);
+                tap_code(KC_LEFT);
+            }
+            return false;
         case TX_G8TEQ:
             if (record->event.pressed) {
             SEND_STRING("\\geq");
