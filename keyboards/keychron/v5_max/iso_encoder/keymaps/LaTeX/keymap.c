@@ -174,6 +174,9 @@ enum custom_keycodes {
 
     TX_UNDERSCORE,
     TX_UUNDERSCORE,
+    
+    UC_Re,
+    UC_Im,
 
     // LATEX Music
     TX_Sharp,
@@ -264,28 +267,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  _______,  _______,                                KC_SPC,                                 _______,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_P0,    KC_PDOT            ),
 
     [UC_BASE] = LAYOUT_iso_99(
-        TG(UC_BASE),        KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,    KC_MUTE,
-        UC(0x0300),   UC(0x0301),     UC(0x0302),     UC(0x030C),     UC(0x0303),     UC(0x0327),     UC(0x030A),     UC(0x0307),     UC(0x0308),     UC(0x0305),     UC(0x00B0),     KC_MINS,    KC_EQL,   KC_BSPC,   UC(0x2044), UC(0x221A), UC(0x00D7), UC(0x2112),
-        _______,   UC(0x03C8), UC(0x03C9), UC(0x03B5), UC(0x03C1), UC(0x03C4), UC(0x03C5), UC(0x00E6),    UC(0x00DF),     UC(0x00F8),     UC(0x03C0), KC_LBRC,    KC_RBRC,                     UC(0x2202), UC(0x222B), UC(0x22C5), UC(0x2020),
-        _______,  UC(0x03B1), UC(0x03C3), UC(0x03B4), UC(0x03C6), UC(0x03B3), UC(0x210F),      UC(0x03B8), UC(0x03BA), UC(0x03BB), KC_SCLN, KC_QUOT,    KC_NUHS,  KC_ENT,            UC(0x2211),   TX_UCRAND,  UC(0x21D2),
-        MO(UC_SHIFT), KC_NUBS, UC(0x03B6), UC(0x03BE), UC(0x03C7), UC(0x03BD), UC(0x03B2), UC(0x03B7), UC(0x03BC), KC_COMM,  KC_DOT,   KC_SLSH,      _______,  _______,  _______,  UC(0x230A), UC(0x22A5), UC(0x2111),
-        MO(UC_LCRTL), KC_LWIN, KC_LALT,                                KC_SPC,                     KC_RALT,  MO(UC_RCRTL), KC_RCTL,  _______,  _______,  _______,  KC_P0,    KC_PDOT            ),
+        TG(UC_BASE),        KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             UC(0x2044), UC(0x221A), KC_END,    KC_MUTE,
+        UC(0x0300),   UC(0x0301),     UC(0x0302),     UC(0x030C),     UC(0x0303),     UC(0x0327),     UC(0x030A),     UC(0x0307),     UC(0x0308),     UC(0x0305),     UC(0x00B0),     KC_MINS,    UC(0x2260),   KC_BSPC,   _______, UC(0x00F7), UC(0x2217), UC(0x2282),
+        _______,   UC(0x03C8), UC(0x03C9), UC(0x03B5), UC(0x03C1), UC(0x03C4), UC(0x03C5), UC(0x00E6),    UC(0x00DF),     UC(0x00F8),     UC(0x03C0), UC(0x27E8), UC(0x27E9),                     UC(0x2208), UC(0x22A5), UC(0x266E), UC(0x220F),
+        _______,  UC(0x03B1), UC(0x03C3), UC(0x03B4), UC(0x03C6), UC(0x03B3), UC(0x210F),      UC(0x03B8), UC(0x03BA), UC(0x03BB), UC(0x2026), UC(0x2113), KC_NUHS,  KC_ENT,            UC(0x2295),   TX_UCRAND,  UC(0x221E),
+        MO(UC_SHIFT), KC_NUBS, UC(0x03B6), UC(0x03BE), UC(0x03C7), UC(0x03BD), UC(0x03B2), UC(0x03B7), UC(0x03BC), UC(0x2264),  UC(0x2265),   UC(0x2116),      _______,  _______,  UC(0x221D),  UC(0x2202), UC(0x21D2), UC_Re,
+        MO(UC_LCRTL), KC_LWIN, KC_LALT,                                KC_SPC,                     KC_RALT,  MO(UC_RCRTL), KC_RCTL,  _______,  _______,  _______,  UC(0x222B),    UC(0x2192)            ),
 
     [UC_SHIFT] = LAYOUT_iso_99(
         TG(UC_BASE),        KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
-        _______,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            KC_NUM,   KC_PSLS,  KC_PAST,    KC_PMNS,
-        _______,  UC(0x03A8), UC(0x03A9), UC(0x0395), UC(0x03A1), UC(0x03A4), UC(0x03A5), KC_U,    KC_I,     KC_O,     UC(0x03A0), KC_LBRC,    KC_RBRC,                      KC_P7,    KC_P8,    KC_P9,      KC_PPLS,
-        _______,  UC(0x0391), UC(0x03A3), UC(0x0394), UC(0x03A6), UC(0x0393), KC_H,      UC(0x0398), UC(0x039A), UC(0x039B), KC_SCLN, KC_QUOT,    KC_NUHS,  KC_ENT,             KC_P4,    KC_P5,    KC_P6,
-        _______,  KC_NUBS,  UC(0x0396), UC(0x039E), UC(0x03A7), UC(0x039D), _______,    UC(0x0397), UC(0x039C), KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,  KC_UP,    KC_P1,    UC(0x2308), KC_P3,      UC(0x211C),
-        _______,  _______,  _______,                                KC_SPC,                                 _______,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_P0,    KC_PDOT            ),
+        _______,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            _______,   UC(0x2017),  UC(0x00D7),    UC(0x2229),
+        _______,  UC(0x03A8), UC(0x03A9), UC(0x0395), UC(0x03A1), UC(0x03A4), UC(0x03A5), UC(0x00E6), UC(0x00DF), UC(0x00F8), UC(0x03A0), KC_LBRC,    KC_RBRC,                      UC(0x2200), UC(0x2220), UC(0x266D), UC(0x2211),
+        _______,  UC(0x0391), UC(0x03A3), UC(0x0394), UC(0x03A6), UC(0x0393), UC(0x210F),      UC(0x0398), UC(0x039A), UC(0x039B), UC(0x2234), UC(0x03D1),    KC_NUHS,  KC_ENT,             UC(0x2297),    _______,    UC(0x2135),
+        _______,  UC(0x03D5), UC(0x03B6), UC(0x03BE), UC(0x03C7), UC(0x03BD), _______,    UC(0x03B7), UC(0x03BC), UC(0x226A),  UC(0x226B),   KC_SLSH,              KC_RSFT,  KC_UP,    UC(0x2248), UC(0x2207), UC(0x21D4),      UC_Im,
+        _______,  _______,  _______,                                KC_SPC,                                 _______,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  UC(0x222B),    UC(0x2192)            ),
 
     [UC_LCRTL] = LAYOUT_iso_99(
         TG(UC_BASE),        KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
-        KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            KC_NUM,   KC_PSLS,  KC_PAST,    KC_PMNS,
-        _______,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,    KC_RBRC,                      KC_P7,    KC_P8,    UC(0x266F), KC_PPLS,
-        _______,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,    KC_NUHS,  KC_ENT,             KC_P4,    KC_P5,    KC_P6,
-        _______,  KC_NUBS,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,  KC_UP,    KC_P1,    KC_P2,    KC_P3,      KC_PENT,
-        _______,  _______,  KC_LALT,                                KC_SPC,                                 KC_RALT,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_P0,    KC_PDOT            ),
+        KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            KC_NUM,   UC(0x0332),  UC(0x22C5),    UC(0x222A),
+        KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,    KC_RBRC,                      UC(0x22C4),    UC(0x2225),    UC(0x266F),      _______,
+        KC_CAPS,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,    KC_NUHS,  KC_ENT,             UC(0x2299),    _______,    UC(0x2020),
+        _______,  KC_NUBS,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,  KC_UP,    UC(0x2254),    UC(0x222E),    UC(0x21CC),      _______,
+        _______,  _______,  KC_LALT,                                KC_SPC,                                 KC_RALT,  _______, _______,  KC_LEFT,  KC_DOWN,  KC_RGHT,  UC(0x222D),    UC(0x21A6)            ),
 
     [UC_RCRTL] = LAYOUT_iso_99(
         TG(UC_BASE),        KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
@@ -717,6 +720,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             tap_code(KC_LEFT);
             }
             return false;
+        
         case TX_REAL:
             if (record->event.pressed) {
             SEND_STRING("\\Re");
@@ -1013,6 +1017,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case TX_Natural:
             if (record->event.pressed) {
                 SEND_STRING("\\natural");
+            }
+            return false;
+        case UC_Re:
+            if (record->event.pressed) {
+                register_unicode(0x211C);
+                register_unicode(0x1D522);
+            }
+            return false;
+        case UC_Im:
+            if (record->event.pressed) {
+                register_unicode(0x2111);
+                register_unicode(0x1D52A);
+
             }
             return false;
     }
