@@ -276,7 +276,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [UC_SHIFT] = LAYOUT_iso_99(
         TG(UC_BASE),        KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,     KC_F11,   KC_F12,             KC_DEL,   KC_HOME,  KC_END,     KC_MUTE,
-        _______,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            _______,   UC(0x2017),  UC(0x00D7),    UC(0x2229),
+        _______,   UC(0x20BD), UC(0x20AC), UC(0x00A3), UC(0x00A5), UC(0x20BA), KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC,            _______,   UC(0x2017),  UC(0x00D7),    UC(0x2229),
         _______,  UC(0x03A8), UC(0x03A9), UC(0x0395), UC(0x03A1), UC(0x03A4), UC(0x03A5), UC(0x00E6), UC(0x00DF), UC(0x00F8), UC(0x03A0), KC_LBRC,    KC_RBRC,                      UC(0x2200), UC(0x2220), UC(0x266D), UC(0x2211),
         _______,  UC(0x0391), UC(0x03A3), UC(0x0394), UC(0x03A6), UC(0x0393), UC(0x210F),      UC(0x0398), UC(0x039A), UC(0x039B), UC(0x2234), UC(0x03D1),    KC_NUHS,  KC_ENT,             UC(0x2297),    _______,    UC(0x2135),
         _______,  UC(0x03D5), UC(0x03B6), UC(0x03BE), UC(0x03C7), UC(0x03BD), _______,    UC(0x03B7), UC(0x03BC), UC(0x226A),  UC(0x226B),   KC_SLSH,              KC_RSFT,  KC_UP,    UC(0x2248), UC(0x2207), UC(0x21D4),      UC_Im,
@@ -1077,4 +1077,3 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     }
     return state;
 }
-
